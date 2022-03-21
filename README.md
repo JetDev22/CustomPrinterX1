@@ -1,4 +1,5 @@
 # CustomPrinter X1
+![alt text](pictures/Construction8.jpg)
 ## The Idea
 
 My Anycubic Mega S was performing quite well for two years, when I suddenly had several kill calls by the firmware due to thermal runaway. I could not isolate the problem. I changed the thermister, heater cartridge, checked the cables .... no change. Sometimes it printed flawless for weeks, other times it stalled several times a day.
