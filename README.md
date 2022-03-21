@@ -64,7 +64,6 @@ The following lists all the parts I reused from disassembling the Mega S:
 - Heatbed Thermistor 1 (EPCOS - Best choice for EPCOS thermistors) (in configuration.h)
 - Print Dimensions - TBA (in configuration.h)
 - Adjusted Extruder EO Steps to 385 for BMG Extruder (in configuration.h)
-- define_eeprom uncommented to allow saveing to eeprom (in configuration.h)
 - Redefined preheat values (PLA 210°C/60°C and PETG 240°C/70°C) (in configuration.h)
 - sdsupport uncommented to allow for use with SD Card (in configuration.h)
 - TMC_debug uncommented to allow debuing and monitoring of the steppers through UART (in configuration_adv.h)
@@ -76,7 +75,7 @@ The following lists all the parts I reused from disassembling the Mega S:
 
 ## Marlin Configuration required for BTT TFT35 E3
 
-For current Bigtreetech published Marlin Settings go [-> HERE](https://github.com/bigtreetech/BIGTREETECH-TouchScreenFirmware#marlin-dependencies)
+For current Bigtreetech published Marlin Settings on TFT35 go [-> HERE](https://github.com/bigtreetech/BIGTREETECH-TouchScreenFirmware#marlin-dependencies)
 
 General options which MUST be activated:
 
@@ -111,7 +110,42 @@ Options to support M600 with host & (Un)Load menu:
 
 Options to fully support Bed Leveling menu (manual only):
 
-- G26_MESH_VALIDATION (in Configuration.h) (in Configuration.h)
+- G26_MESH_VALIDATION (in Configuration.h)
+
+## Marlin Configuration required for SKR 2 Rev B
+
+For current Bigtreetech published Marlin Settings on SKR 2 go [-> HERE](https://3dwork.io/en/complete-guide-skr2/#Firmwares_Marlin)
+
+- SERIAL_PORT 1 (in Configuration.h)
+- BAUDRATE 115200 (in Configuration.h)
+- SERIAL_PORT_2 -1 (in Configuration.h)
+- SERIAL_PORT_3 3 (in Configuration.h)
+- PIDTEMP (in Configuration.h)
+- PIDTEMPBED (in Configuration.h)
+- S_CURVE_ACCELERATION (in Configuration.h)
+- EEPROM_SETTINGS (in Configuration.h)
+- EEPROM_CHITCHAT (in Configuration.h)
+- INDIVIDUAL_AXIS_HOMING_MENU (in Configuration.h)
+- LONG_FILENAME_HOST_SUPPORT (in Configuration_adv.h)
+- SCROLL_LONG_FILENAMES (in Configuration_adv.h)
+- SDCARD_CONNECTION LCD (in Configuration_adv.h)
+- E0_AUTO_FAN_PIN FAN1_PIN FAN1 // Assigned to the Hotend (in Configuration_adv.h)
+- USE_CONTROLLER_FAN (in Configuration_adv.h)
+- CONTROLLER_FAN_PIN FAN2_PIN // FAN2 Assigned to electronics (in Configuration_adv.h)
+- CONTROLLER_FAN_EDITABLE (in Configuration_adv.h)
+- CONTROLLER_FAN_MENU (in Configuration_adv.h)
+- BABYSTEPPING (in Configuration_adv.h)
+- DOUBLECLICK_FOR_Z_BABYSTEPPING (in Configuration_adv.h)
+- BABYSTEP_ALWAYS_AVAILABLE (in Configuration_adv.h)
+- ARC_SUPPORT (in Configuration_adv.h)
+- ADVANCED_PAUSE_FEATURE (in Configuration_adv.h)
+- CHOPPER_TIMING CHOPPER_DEFAULT_12V (in Configuration_adv.h)
+- MONITOR_DRIVER_STATUS (in Configuration_adv.h)
+- HYBRID_THRESHOLD (in Configuration_adv.h)
+- X_HYBRID_THRESHOLD 100 (in Configuration_adv.h)
+- Y_HYBRID_THRESHOLD 100 (in Configuration_adv.h)
+- Z_HYBRID_THRESHOLD 15 // default is 4 (in Configuration_adv.h)
+- TMC_DEBUG (in Configuration_adv.h)
 
 ## Custom Start and End Gcode
 
