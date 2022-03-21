@@ -76,6 +76,8 @@ The following lists all the parts I reused from disassembling the Mega S:
 
 ## Marlin Configuration required for BTT TFT35 E3
 
+For current Bigtreetech published Marlin Settings go [-> HERE](https://github.com/bigtreetech/BIGTREETECH-TouchScreenFirmware#marlin-dependencies)
+
 General options which MUST be activated:
 
 - EEPROM_SETTINGS (in Configuration.h)
