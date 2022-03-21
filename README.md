@@ -113,3 +113,14 @@ Options to fully support Bed Leveling menu (manual only):
 
 - G26_MESH_VALIDATION (in Configuration.h) (in Configuration.h)
 
+## Custom Start and End Gcode
+
+TBA
+
+## PrusaSlicer Setting
+
+TBA
+
+## RepetierServer Settings
+
+TBA
