@@ -59,7 +59,7 @@ The following lists all the parts I reused from disassembling the Mega S:
 - [3030 Y Endstop Mount](https://github.com/JetDev22/CustomPrinterX1/blob/main/STLs/YEndstop.stl)
 - [3030 Y Motor Mount](https://github.com/JetDev22/CustomPrinterX1/blob/main/STLs/YMotor.stl)
 
-## Marlin Config Changes Summary
+## Marlin Configuration General
 - Hotend Thermistor 13 (Hisens up to 300°C - for "Simple ONE" & "All In ONE" hotend - beta 3950, 1%) (in configuration.h)
 - Heatbed Thermistor 1 (EPCOS - Best choice for EPCOS thermistors) (in configuration.h)
 - Print Dimensions - TBA (in configuration.h)
@@ -73,3 +73,41 @@ The following lists all the parts I reused from disassembling the Mega S:
 - USE_CONTROLLER_FAN enabled to start Board Fan whenever the steppers are active, to cool stepper drivers (in configuration_adv.h)
 - HOTEND_IDLE_TIMEOUT enabled to avoid preheating to long without starting an actual print, so the filament does not char in the hotend (in configuration_adv.h)
 - define NUM_Z_STEPPER_DRIVERS 2 (in configuration_adv.h)
+
+## Marlin Configuration required for BTT TFT35 E3
+
+General options which MUST be activated:
+
+- EEPROM_SETTINGS (in Configuration.h)
+- BABYSTEPPING (in Configuration_adv.h)
+- AUTO_REPORT_TEMPERATURES (in Configuration_adv.h)
+- AUTO_REPORT_POSITION (in Configuration_adv.h)
+- M115_GEOMETRY_REPORT (in Configuration_adv.h)
+- M114_DETAIL (in Configuration_adv.h)
+- REPORT_FAN_CHANGE (in Configuration_adv.h)
+
+Options to support printing from onboard media:
+
+- SDSUPPORT (in Configuration.h)
+- LONG_FILENAME_HOST_SUPPORT (in Configuration_adv.h)
+- AUTO_REPORT_SD_STATUS (in Configuration_adv.h)
+- SDCARD_CONNECTION ONBOARD (in Configuration_adv.h)
+
+Options to support dialog with host:
+
+- EMERGENCY_PARSER (in Configuration_adv.h)
+- SERIAL_FLOAT_PRECISION 4 (in Configuration_adv.h)
+- HOST_ACTION_COMMANDS (in Configuration_adv.h)
+- HOST_PROMPT_SUPPORT (in Configuration_adv.h)
+
+Options to support M600 with host & (Un)Load menu:
+
+- NOZZLE_PARK_FEATURE (in Configuration.h)
+- ADVANCED_PAUSE_FEATURE (in Configuration_adv.h)
+- PARK_HEAD_ON_PAUSE (in Configuration_adv.h)
+- FILAMENT_LOAD_UNLOAD_GCODES (in Configuration_adv.h)
+
+Options to fully support Bed Leveling menu (manual only):
+
+- G26_MESH_VALIDATION (in Configuration.h) (in Configuration.h)
+
