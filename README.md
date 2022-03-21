@@ -58,3 +58,10 @@ The following lists all the parts I reused from disassembling the Mega S:
 - [SKR 2 Case Top with 120mm Fan mount](https://github.com/JetDev22/CustomPrinterX1/blob/main/STLs/SKRCaseTop.stl)
 - [3030 Y Endstop Mount](https://github.com/JetDev22/CustomPrinterX1/blob/main/STLs/YEndstop.stl)
 - [3030 Y Motor Mount](https://github.com/JetDev22/CustomPrinterX1/blob/main/STLs/YMotor.stl)
+
+## Marlin Config Changes Summary
+- Hotend Thermistor 13 (Hisens up to 300°C - for "Simple ONE" & "All In ONE" hotend - beta 3950, 1%)
+- Heatbed Thermistor 1 (EPCOS - Best choice for EPCOS thermistors)
+- Print Dimensions - TBA
+- Adjusted Extruder EO Steps to 385 for BMG Extruder
+- TMC_debug uncommented in configuration_adv.h
