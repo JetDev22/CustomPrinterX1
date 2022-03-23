@@ -65,13 +65,14 @@ The following lists all the parts I reused from disassembling the Mega S:
 - Print Dimensions - TBA (in configuration.h)
 - Adjusted Extruder EO Steps to 385 for BMG Extruder (in configuration.h)
 - Redefined preheat values (PLA 210°C/60°C and PETG 240°C/70°C) (in configuration.h)
-- sdsupport uncommented to allow for use with SD Card (in configuration.h)
-- TMC_debug uncommented to allow debuing and monitoring of the steppers through UART (in configuration_adv.h)
+- SDSUPPORT (in configuration.h)
+- TMC_DEBUG (in configuration_adv.h)
 - WATCH_TEMP_PERIOD set to 90 seconds for the hotend if it fluctuates by 2 degress to ease thermal runaway sensitivity (in configuration_adv.h)
 - WATCH_BED_TEMP_PERIOD set to 120 seconds for the hotend if it fluctuates by 2 degress to ease thermal runaway sensitivity (in configuration_adv.h)
 - USE_CONTROLLER_FAN enabled to start Board Fan whenever the steppers are active, to cool stepper drivers (in configuration_adv.h)
 - HOTEND_IDLE_TIMEOUT enabled to avoid preheating to long without starting an actual print, so the filament does not char in the hotend (in configuration_adv.h)
 - define NUM_Z_STEPPER_DRIVERS 2 (in configuration_adv.h)
+- MESH_BED_LEVELING (in configuration.h)
 
 ## Marlin Configuration required for BTT TFT35 E3
 
