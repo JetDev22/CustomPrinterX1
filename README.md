@@ -149,9 +149,41 @@ For current Bigtreetech published Marlin Settings on SKR 2 go [-> HERE](https://
 - Z_HYBRID_THRESHOLD 15 // default is 4 (in Configuration_adv.h)
 - TMC_DEBUG (in Configuration_adv.h)
 
-## Custom Start and End Gcode
+## Custom Start Gcode
 
-TBA
+G90 ; use absolute coordinates
+M83 ; extruder relative mode
+M204 S[machine_max_acceleration_extruding] T[machine_max_acceleration_retracting]
+M104 S[first_layer_temperature] ; set extruder temp
+M140 S[first_layer_bed_temperature] ; set bed temp
+G28 ; home all
+M420 S1
+G1 Y1.0 Z0.3 F1000 ; move print head up
+M190 S[first_layer_bed_temperature] ; wait for bed temp
+M109 S[first_layer_temperature] ; wait for extruder temp
+G92 E0.0
+; initial load
+G1 X170 E19 F1000
+G1 Y1.6
+G1 X5.0 E19 F1000
+G92 E0.0
+; intro line
+G1 Y2.0 Z0.2 F1000
+G1 X65.0 E9.0 F1000
+G1 X105.0 E12.5 F1000
+G92 E0.0
+
+## Custom End Gcode
+
+G1 E-1.0 F2100 ; retract
+G92 E0.0
+G1{if max_layer_z < max_print_height} Z{z_offset+min(max_layer_z+30, max_print_height)}{endif} E-34.0 F720 ; move print head up & retract filament
+G4 ; wait
+M104 S0 ; turn off temperature
+M140 S0 ; turn off heatbed
+M107 ; turn off fan
+G1 X0 Y105 F3000 ; park print head
+M84 ; disable motors
 
 ## PrusaSlicer Setting
 
