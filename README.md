@@ -81,6 +81,7 @@ For current Bigtreetech published Marlin Settings on TFT35 go [-> HERE](https://
 General options which MUST be activated:
 
 - EEPROM_SETTINGS (in Configuration.h)
+- REPRAP_DISCOUNT_FULL_GRAPHIC_SMART_CONTROLLER (in Configuration.h)
 - BABYSTEPPING (in Configuration_adv.h)
 - AUTO_REPORT_TEMPERATURES (in Configuration_adv.h)
 - AUTO_REPORT_POSITION (in Configuration_adv.h)
